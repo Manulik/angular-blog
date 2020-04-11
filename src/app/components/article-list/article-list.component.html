@@ -1,0 +1,30 @@
+<div class="article-list">
+    <ul>
+        <div *ngFor="let article of pageOfItems">
+                <div class="articlesContainer">
+                    <div class="article">
+                        <div class="imgBlock">
+                            <img src="{{ article.imageUrl }}" alt="{{ article.title }}">
+                        </div>
+                        <div class="articleContent">
+                            <h3 routerLink="/articles/{{article.id}}">{{ article.title }}</h3>
+                            <div class="dateInfo">
+                                <p>Published 2 days ago</p>
+                                <p>{{ article.time }} min read</p>
+                            </div>
+                            <div class="shortDescription">
+                                <p>
+                                    {{ article.discription }}
+                                </p>
+                            </div>
+                            <a routerLink="/articles/{{article.id}}" (click)="onItemClick()">Read more</a>
+                        </div>
+                    </div>
+                </div>
+            <!-- <button (click)="onItemClick()">Click me</button> -->
+        </div>
+            <div class="pag">
+                <jw-pagination [items]="articles" (changePage)="onChangePage($event)"></jw-pagination>
+            </div>
+    </ul>
+</div>

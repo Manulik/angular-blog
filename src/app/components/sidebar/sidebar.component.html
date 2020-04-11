@@ -1,0 +1,50 @@
+<div class="sidebar">
+    <h1>Nikita's Blog</h1>
+    <div class="blockImg">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTZxzhtU8vk5l0tATkpXbkeJ6uzYFzRRbhzA9Riyh6nq3iG1jP4&usqp=CAU" alt="author's Logo">
+    </div>
+    <div class="shortMassege">
+        <p>Hi, my name is Anthony Doe. Briefly introduce yourself here. You can also provide a link to the about page.</p>
+        <a routerLink='/about'>Find out more about me</a>
+    </div>
+    <div class="connection">
+            <div class="sectionLink">
+                <a href="#">
+                    <img src="https://image.flaticon.com/icons/svg/1384/1384015.svg" alt="instagram">
+                </a>
+            </div>
+            <div class="sectionLink">
+                <a href="#">
+                    <img src="https://image.flaticon.com/icons/svg/1384/1384005.svg" alt="facebook">
+                </a>
+            </div>
+            <div class="sectionLink">
+                <a href="#">
+                    <img src="https://image.flaticon.com/icons/svg/1384/1384017.svg" alt="twitter">
+                </a>
+            </div>
+            <div class="sectionLink">
+                <a href="#">
+                    <img src="https://image.flaticon.com/icons/svg/1384/1384007.svg" alt="whatsapp">
+                </a>
+            </div>
+            <div class="sectionLink">
+                <a href="#">
+                    <img src="https://image.flaticon.com/icons/svg/2111/2111710.svg" alt="telegram">
+                </a>
+            </div>
+    </div>
+    <div class="line"></div>
+    <nav>
+        <div>
+            <a routerLink="/articles">Blog Home</a>
+        </div>
+        <div>
+            <a routerLink="/about">About Me</a>
+        </div>
+        <div>
+            <a routerLink="/add" *ngIf="adminRole">New article</a>
+        </div>
+    </nav>
+    <a href="https://themes.3rdwavemedia.com/" target="_blank"><button>Get in Touch</button></a>
+</div>

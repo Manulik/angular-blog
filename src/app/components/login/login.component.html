@@ -1,0 +1,11 @@
+<form [formGroup]="loginFrom" (ngSubmit)="onSubmit()">
+    <label>
+        Email:
+            <input type="text" placeholder="adminName@mail.ru" formControlName='login' />
+    </label>
+    <label>
+        Password:
+            <input type="password" placeholder="Password" formControlName='password' />
+    </label>
+<button (click)="onButtonClick()" type="submit">Login</button>
+</form>

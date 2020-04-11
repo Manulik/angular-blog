@@ -1,0 +1,51 @@
+<button (click)="logOut()" routerLink="/articles">Log out</button>
+<form [formGroup]="articleForm" (ngSubmit)="onSubmit()">
+    <label>
+        Titile:
+        <input type="text" formControlName="title" required />
+      </label>
+      <label>
+          ImageUrl:
+          <input type="text" formControlName="imageUrl">
+      </label>
+      <label>
+          How many minutes user will read it:
+          <input type="text" formControlName="time">
+      </label>
+      <label>
+          Short description:
+          <textarea type="text" class="description" formControlName="discription"></textarea>
+      </label>
+      <label>
+          Content:
+          <textarea [froalaEditor] class="content" formControlName="content">
+          </textarea>
+          <!-- <editor apiKey="test" [init]="{plugins: 'link'}"></editor> -->
+      </label>
+      <button (click)='add()' type="submit" [disabled]="!articleForm.valid">Add</button>
+</form>
+
+<ul>
+    <li *ngFor="let article of articles">
+        <div class="articlesContainer" *ngIf='article.title '>
+            <div class="article">
+                <div class="imgBlock">
+                    <img src="{{ article.imageUrl }}" alt="{{ article.title }}">
+                </div>
+                <div class="articleContent">
+                    <h3>{{ article.title }}</h3>
+                    <div class="dateInfo">
+                        <p>Published 2 days ago</p>
+                        <p>{{ article.time }} min read</p>
+                    </div>
+                    <div class="shortDescription">
+                        <p>
+                            {{ article.discription }}
+                        </p>
+                    </div>
+                    <a  routerLink="/articles/{{article.id}}">Read more</a>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>

@@ -1,0 +1,27 @@
+<button (click)="back()" class="backBtn">
+    <img src="https://cdn.pixabay.com/photo/2016/09/23/14/42/back-1689836_1280.png" alt="back">
+</button>
+<form [formGroup]="editForm">
+    <label>
+        Title:
+            <input type="text" formControlName="title">
+    </label>
+    <label>
+        ImageUrl:
+            <input type="text" formControlName="imageUrl">
+    </label>
+    <label>
+        How many minutes user will read it:
+            <input type="text" formControlName="time">
+    </label>
+    <label>
+        Short desctiption:
+            <input type="text" class="description" formControlName="description">
+    </label>
+    <label>
+        Content:
+        <textarea [froalaEditor] class="content" formControlName="content"></textarea>
+    </label>
+    <button (click)='edit()' type="submit" routerLink="/articles/{{article.id}}">Edit article</button>
+</form>
+<!-- <div class="content"></div> -->
