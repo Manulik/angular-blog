@@ -6,22 +6,22 @@ import { LoginComponent } from './components/login/login.component';
 import { AdminOnlyGuard } from './guards/admin/admin-only.guard';
 import { ArticleComponent } from './components/article/article.component';
 import { InformationAboutAuthorComponent } from './components/information-about-author/information-about-author.component';
-import { TestComponent } from './components/test/test.component';
 import { EditArticleComponent } from './components/edit-article/edit-article.component';
 import { AdminService } from './services/admin/admin.service';
+import { EditBiographyComponent } from './components/edit-biography/edit-biography.component';
 
 const routes: Routes = [
   {
     path: 'add', component: AddArticleComponent, canActivate: [AdminOnlyGuard]
   },
   {
-    path: 'test', component: TestComponent
-  },
-  {
     path:'', redirectTo:'/articles', pathMatch: 'full'
   },
   {
     path: 'about', component: InformationAboutAuthorComponent
+  },
+  {
+    path: 'about/edit', component: EditBiographyComponent, canActivate: [AdminOnlyGuard]
   },
   {
     path: 'articles/:id', component: ArticleComponent

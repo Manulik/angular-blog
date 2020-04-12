@@ -15,8 +15,8 @@ import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 import { InformationAboutAuthorComponent } from './components/information-about-author/information-about-author.component';
 import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
 import { JwPaginationComponent } from 'jw-angular-pagination';
-import { TestComponent } from './components/test/test.component';
 import { EditArticleComponent } from './components/edit-article/edit-article.component';
+import { EditBiographyComponent } from './components/edit-biography/edit-biography.component';
 
 
 @NgModule({
@@ -30,8 +30,8 @@ import { EditArticleComponent } from './components/edit-article/edit-article.com
     ArticleComponent,
     InformationAboutAuthorComponent,
     JwPaginationComponent,
-    TestComponent,
-    EditArticleComponent
+    EditArticleComponent,
+    EditBiographyComponent
   ],
   imports: [
     FroalaEditorModule.forRoot(),
