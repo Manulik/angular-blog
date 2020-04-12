@@ -95,7 +95,6 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "outputPath": "dist/angular-bootstrap-examples",
             "main": "src/test.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
@@ -110,14 +109,14 @@
             ],
             "styles": [
               "src/styles.sass",
-              // "./node_modules/bootstrap/dist/css/bootstrap.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.css",
               "node_modules/tinymce/tinymce.min.js",
               "./node_modules/froala-editor/css/froala_editor.pkgd.min.css",
               "./node_modules/froala-editor/css/froala_style.min.css"
             ],
             "scripts": [
               "node_modules/tinymce/tinymce.min.js",
-              // "./node_modules/bootstrap/dist/js/bootstrap.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.js",
               "./node_modules/froala-editor/js/froala_editor.pkgd.min.js"
             ]
           }
