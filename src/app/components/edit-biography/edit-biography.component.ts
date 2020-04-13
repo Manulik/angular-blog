@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormControlName, FormControlDirective } from '@angular/forms';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-edit-biography',
@@ -11,7 +12,7 @@ export class EditBiographyComponent implements OnInit {
   biographyContent;
 
 
-  constructor() { }
+  constructor(private location: Location) { }
 
   ngOnInit() {
     this.biographyContent = JSON.parse(localStorage.getItem('biography'));
@@ -19,9 +20,10 @@ export class EditBiographyComponent implements OnInit {
   }
 
   addBiog() {
-    if(this.biography.value !== '') {
       localStorage.setItem('biography', JSON.stringify(this.biography));
-    }
+  }
+  back() {
+    this.location.back();
   }
 
 }

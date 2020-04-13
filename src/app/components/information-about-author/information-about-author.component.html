@@ -1,5 +1,9 @@
 <div class="toback">
-    <button routerLink="/about/edit" *ngIf="adminRole">Edit</button>
+    <div class="admin-panel">
+        <button routerLink="/about/edit" class="editBiogBtn" *ngIf="adminRole">
+            <img src="https://cdn.pixabay.com/photo/2015/12/22/04/00/edit-1103598_1280.png" alt="edit">
+        </button>
+    </div>
      <div class="about">
         {{ biographyContent }}
     </div>

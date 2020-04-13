@@ -59,11 +59,11 @@
               "aot": false,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true,
+              "buildOptimizer": false,
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
+                  "maximumWarning": "4mb",
                   "maximumError": "5mb"
                 },
                 {
