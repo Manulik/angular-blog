@@ -24,13 +24,26 @@ export class ArticleListComponent implements OnInit {
   ngOnInit() {
     this.res = JSON.parse(localStorage.getItem('todos')) || [];
     this.articles = this.res;
-    console.log(this.articles)
+    console.log(this.articles);
+
+    for (let article of this.articles) {
+        article.date = Math.floor((Date.parse(article.date) - Date.now()) / 86400000);
+        if(article.date <= 0) {
+          article.date = 'Published today';
+        } else if(article.date === 1){
+          article.date = 'Published yesterday';
+        } 
+        else if(article.date > 0){
+          article.date = 'Published' + article.date + 'days ago';
+        }
+        console.log(article.date);
+    }
     }
   onItemClick() {
     this.id = +this.route.snapshot.paramMap.get('id');
   }
   onChangePage(pageOfItems: Array<any>) {
     this.pageOfItems = pageOfItems;
-}
+  }
 
 }

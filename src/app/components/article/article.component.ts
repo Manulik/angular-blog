@@ -61,8 +61,19 @@ export class ArticleComponent implements OnInit {
       if(article.id === id) {
         this.article = article;
         console.log(this.article);
-        // this.sanitized.bypassSecurityTrustHtml(article.content);
-        // console.log(article.content);
+
+        this.article.date = Math.floor((Date.parse(this.article.date) - Date.now()) / 86400000);
+        console.log(this.article.date);
+        if(this.article.date <= 0) {
+          this.article.date = 'Published today';
+        } else if(this.article.date === 1){
+          this.article.date = 'Published yesterday';
+        }
+        else if(article.date > 0){
+          this.article.date = 'published ' + this.article.date + ' days ago';
+        }
+        console.log(this.article.date);
+
         let content = document.querySelector('.content');
         content.innerHTML = this.article.content;
         this.editForm.patchValue({title: this.article.title,

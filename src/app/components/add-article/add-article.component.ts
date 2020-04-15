@@ -20,6 +20,7 @@ export class AddArticleComponent implements OnInit {
     discription: new FormControl(''),
     id: new FormControl(''),
     content: new FormControl(),
+    date: new FormControl(new Date),
   })
   constructor(private articleService: ArticleService,
               private adminService: AdminService,
